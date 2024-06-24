@@ -1,23 +1,16 @@
-import os
-from tensorflow import keras
 import numpy as np
 import glob
-import pandas as pd
 import xml.etree.ElementTree as ET
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
-import numpy as np
 import os
 import PIL
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
-from tensorflow.keras.models import Sequential
-import pathlib
 from tensorflow.keras.utils import plot_model
 import pandas as pd
 from PIL import Image
-from PIL.ImageDraw import Draw
 from matplotlib.patches import Rectangle
 
 SKIP_NEGATIVES = True
@@ -73,18 +66,15 @@ datasets = ['training']
 # xml to csv for data
 for ds in datasets:
     # image_path = os.path.join(os.getcwd(), 'Images', ds)
-    image_path = ('C:\\Users\\Chazzey Chad 9000\\Desktop\\CodingFiles\\ThesisWork\\MyWork\\ObjectLocalization'
-                  '\\\\dataset\\annot')
+    image_path = ('.\\\\dataset\\annot')
     xml_df = xml_to_csv(image_path, SKIP_NEGATIVES)
     xml_df.to_csv('dataset_01.csv'.format(ds), index=None)
     print('Successfully converted xml to csv.')
 
 
 # File Path to csv and main image directory
-TRAINING_CSV_FILE = ('C:\\Users\\Chazzey Chad 9000\\Desktop\\CodingFiles\\ThesisWork\\MyWork\\ObjectLocalization'
-                     '\\\\dataset.csv')
-TRAINING_IMAGE_DIR = ('C:\\Users\\Chazzey Chad 9000\\Desktop\\CodingFiles\\ThesisWork\\MyWork\\ObjectLocalization'
-                      '\\\\dataset\\images')
+TRAINING_CSV_FILE = ('.\\\\dataset.csv')
+TRAINING_IMAGE_DIR = ('.\\\\dataset\\images')
 
 image_records = pd.read_csv(TRAINING_CSV_FILE)
 # Test Split (90/10)
