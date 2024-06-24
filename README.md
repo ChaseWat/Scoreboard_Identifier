@@ -21,6 +21,7 @@ dowload the annotated dataset and the pretrained model from https://drive.google
 </div>
 
 ## Model Output
+A green box is drawn around the scoreboard based on the vertices identified by the obeject locator. 
 <div align="center">
     <img src="https://github.com/ChaseWat/Scoreboard_Identifier/blob/main/OutputExample.PNG" width="1080">
 </div>
